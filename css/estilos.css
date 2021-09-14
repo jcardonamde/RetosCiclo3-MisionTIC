@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Estilos para la barra de Navegación del Home HU1 */
+#nav_bar {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+#nav_bar nav {
+    align-items: center;
+    background: lightgrey;
+    height: 60px;
+    padding: 10px 0px;
+    text-align: center;
+    position: relative;
+}
+#nav_bar ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-style: none;
+    list-style: none;
+    margin: 5px 20px;
+}
+#nav_bar a {
+    color: white;
+    text-decoration: none;
+}
+#nav_bar a:hover {
+    color: blue;
+    transform: 2s;
+}
+/* Estilos para el boton de registro HU2 */
+#Registerbutton {
+    font-size: 9.5px;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    top: 15px;
+    right: 150px;
+}
+#Registerbutton a {
+    color: black;
+}
+#Registerbutton:hover {
+    background-color: blue;
+    color: yellow;
+    transform: 2s;
+}
+#Registerbutton a:hover {
+    background-color: blue;
+    color: yellow;
+    transform: 2s;
+}
+/* Estilos para el Formulario de Registro HU3 */
+#formRegistro {
+    align-items: center;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 500px;
+    margin: 50px auto;
+    padding: 60px 68px 40px;
+    width: 400px;
+}
+#formRegistro h2 {
+    color: green;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+#formRegistro form {
+    display: flex;
+    flex-direction: column;
+}
+#formRegistro input {
+    border: 2px solid green;
+    font-family: 'Muli' sans-serif;
+    height: 20px;
+    outline: none;
+}
+
+/* Estilos para pruebas temporales */
+.prueba {
+    margin-top: 80px;
+    position: absolute;
+}
+section {
+  display: flex;
+  align-content: space-between;
+}
