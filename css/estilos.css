@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-/* Estilos para la barra de Navegación del Home HU1 */
+/* Estilos para la barra de Navegación del Home HU1 Sprint1 */
 #nav_bar {
     position: fixed;
     width: 100%;
@@ -32,7 +32,7 @@
     color: blue;
     transform: 2s;
 }
-/* Estilos para el Boton de registro HU2 */
+/* Estilos para el Boton de registro HU2 Sprint1 */
 #Registerbutton {
     font-size: 9.5px;
     height: 30px;
@@ -54,36 +54,174 @@
     color: yellow;
     transform: 2s;
 }
-/* Estilos para el Formulario de Registro HU3 */
+/* Estilos para el Formulario de Registro HU3 Sprint1 - Libre Sprint2 */
 #formRegistro {
     align-items: center;
-    border: 2px solid black;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    justify-content: space-around;
+    min-height: calc(100vh - 200px);
+    padding: 0px 30px;
+    width: 100%;
+}
+#formRegistro h2 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding: 0%;
+}
+.formulario {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid green;
+    border-radius: 40px;
+    color: green;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    height: 200px;
-    margin: 50px auto;
-    padding: 60px 68px 40px;
-    width: 100px;
+    margin: 25px 0px 20px 0px;
+    padding: 50px 68px 40px;
+    min-height: 500px;
+    width: 50%;
 }
-#formRegistro h2 {
-    color: green;
-    display: flex;
+.formulario__grupo-input {
+    position: relative;
+}
+.formulario__label {
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+}
+.formulario__input {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 3px solid white;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    width: 100%;
+}
+.formulario__input:focus {
+    border: 3px solid #0075ff;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+    outline: none;
+}
+.formulario__input-error {
+    display: none;
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.formulario__input-error-activo {
+    display: block;
+}
+.formulario__validacion-estado {
+    bottom: 15px;
+    position: absolute;
+    font-size: 16px;
+    opacity: 0;
+    right: 10px;
+    z-index: 100;
+}
+.formulario__checkbox {
+    align-items: center;
+    display: inline-flex;
     justify-content: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    margin-left: 20%;
+    margin-right: 10px;
 }
-#formRegistro form {
+.formulario__mensaje {
+    background: #f66060;
+    border-radius: 3px;
+    display: none;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+}
+.formulario__mensaje-activo {
+    display: block;
+}
+.formulario__mensaje p {
+    margin: 0;
+}
+.formulario__grupo-btn-enviar {
+    align-items: center;
     display: flex;
     flex-direction: column;
 }
-#formRegistro input {
-    border: 2px solid green;
-    font-family: 'Muli' sans-serif;
-    height: 20px;
-    outline: none;
+.formulario__btn {
+    background: black;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 35px;
+    transition: .1s ease all;
+    width: 30%;
 }
-/* Estilos para Botones de administración HU4 */
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+.formulario__mensaje-exito {
+    color: #119200;
+    display: none;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+/* ---Estilos para validación ---*/
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+/* ---Media queries ---*/
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+    .formulario__label {
+        font-size: 15px;
+        width: 100%;
+    }
+    .formulario__input {
+        font-size: 12px;
+        width: 100%;
+    }
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+    grid-column: 1;
+    }
+    .formulario__btn {
+        width: 100%;
+    }
+}
+/* Estilos para Botones de administración HU4 Sprint1 */
 .contenido {
     position: relative;
 }
@@ -112,6 +250,30 @@
     color: 	#FFA500;
     transform: scale(1.2, 1.2);   
 }
+/* Estilos para boton Home de la pagina Registro Sprint2*/
+.home-button {
+    align-items: center;
+    border: 2px groove green;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    height: 45px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 50px;
+}
+.home-button img {
+    height: 32px;
+    width: 32px;
+}
+.home-button:hover {
+    background-color: rgba(109, 196, 196, 0.952);
+    border: 2px ridge orange;
+}
+
 /* Estilos para pruebas temporales */
 .prueba {
     margin-top: 100px;

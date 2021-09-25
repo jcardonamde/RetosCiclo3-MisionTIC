@@ -4,35 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/estilos.css">
     <title>Registro</title>
 </head>
 <body>
-    <a href="./index.html">Volver al Home</a>
-    <div id="formRegistro">
-        <h2>Regístrate</h2>
-        <form class="" action="" method="">
-            <label for="name_user">Nombre completo</label>
-            <input type="text" id="name_user" name="name" placeholder="Ingrese nombre completo" required>
-            <br>
-            <label for="nickname">Usuario de preferencia</label>
-            <input type="text" id="nickname" name="user" placeholder="Ingrese un usuario" required>
-            <br>
-            <label for="password_user">Contraseña</label>
-            <input type="password" id="password_user" name="pswd-user" placeholder="Ingrese una contraseña" required>
-            <br>
-            <label for="cellphone">Telefono móvil</label>
-            <input type="number" id="cellphone" name="cellphone-user" placeholder="Ingrese tel. móvil de contacto" required>
-            <br>
-            <label for="address">Dirección de residencia</label>
-            <input type="text" id="address" name="address-user" placeholder="Ingrese dirección de residencia" required>
-            <br>
-            <label for="email_user">Correo electronico</label>
-            <input type="email" id="email_user" name="email-user" placeholder="Ingrese un email valido" required>
-            <br>
-            <label for="email_userv">Confirme su Correo electronico</label>
-            <input type="email" id="email_userv" name="email-user-validator" placeholder="Digite el email anterior" required>
+    <main id="formRegistro">
+        <form action="" class="formulario" id="formulario">
+            <h2>Regístrate</h2>
+            <!-- Grupo Nombre -->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="campoNombre" class="formulario__label">Nombre completo</label>
+                <div>
+                    <input type="text" class="formulario__input" id="campoNombre" name="campoNombre"
+                        placeholder="Ingrese su nombre completo" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El nombre debe tener un maximo de 40 caracteres y solo puede tener
+                    letras y espacios (puede llevar acentos).</p>
+            </div>
+            <!-- Grupo Usuario -->
+            <div class="formulario__grupo" id="grupo__usuario">
+                <label for="campoUsuario" class="formulario__label">Usuario de preferencia</label>
+                <div>
+                    <input type="text" class="formulario__input" id="campoUsuario" name="campoUsuario"
+                        placeholder="Ingrese un usuario valido" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 digitos y solo puede tener
+                    contener numeros, letras y guion bajo.</p>
+            </div>
+            <!-- Grupo Contraseña -->
+            <div class="formulario__grupo" id="grupo__password">
+                <label for="campoPassword" class="formulario__label">Usuario de preferencia</label>
+                <div>
+                    <input type="password" class="formulario__input" id="campoPassword" name="campoPassword"
+                        placeholder="Ingrese una contraseña" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+            </div>
+            <!-- Grupo Telefono -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="campoTelefono" class="formulario__label">Telefono de contacto</label>
+                <div>
+                    <input type="text" class="formulario__input" id="campoTelefono" name="campoTelefono"
+                        placeholder="123 4567" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El teléfono como minimo de tener 6 digitos y como máximo 10. Sin
+                    caracteres especiales.</p>
+            </div>
+            <!-- Grupo Dirección -->
+            <div class="formulario__grupo" id="grupo__direccion">
+                <label for="campoDireccion" class="formulario__label">Dirección de residencia</label>
+                <div>
+                    <input type="text" class="formulario__input" id="campoDireccion" name="campoDireccion"
+                        placeholder="Ingrese dirección de residencia" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La dirección como minimo de tener 7 caracteres y como máximo 30.
+                    Recordar comenzar por Carrera, Transversal, Circular, Calle e ingresar el simbolo #</p>
+            </div>
+            <!-- Grupo Email -->
+            <div class="formulario__grupo" id="grupo__email">
+                <label for="campoEmail" class="formulario__label">Correo electronico</label>
+                <div>
+                    <input type="email" class="formulario__input" id="campoEmail" name="campoEmail"
+                        placeholder="Ingrese un email valido" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo debe contener letras, numeros, puntos, guiones y guion
+                    bajo.</p>
+            </div>
+            <!-- Grupo Rectificador Email -->
+            <div class="formulario__grupo" id="grupo__email2">
+                <label for="campoEmail2" class="formulario__label">Confirme su Correo electronico</label>
+                <div>
+                    <input type="email" class="formulario__input" id="campoEmail2" name="campoEmail2"
+                        placeholder="Digite el email anterior" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ambos correos deben ser iguales.</p>
+            </div>
+
+            <!-- Grupo Terminos y Condiciones -->
+            <div class="formulario__grupo" id="grupo__terminos">
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Terminos y Condiciones
+                </label>
+            </div>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                    correctamente.</p>
+            </div>
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
         </form>
-    </div>
+        <button type="submit" class="home-button">
+            <a href="./index.html">
+                <img src="./imgs/home.png" alt="Home">
+            </a>
+        </button>
+    </main>
+
+    <script src="./js/validaciones.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
