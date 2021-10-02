@@ -6,7 +6,7 @@ const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
     telefono: /^\d{6,10}$/, // 7 a 14 numeros.
-    direccion: /^[a-zA-Z0-9\_\-\#]{7,30}$/, // 7 a 30 caracteres
+    direccion: /^[a-zA-Z0-9\#\_\-]{7,30}$/, // 7 a 30 caracteres
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
@@ -19,46 +19,58 @@ const campos = {
     correo: false,
 }
 
-
 var numTelefono = document.getElementById('campoTelefono');
 var direccionUsuario = document.getElementById('campoDireccion');
 
 function validar_telefono (string) {
-
-}
-
-
-function validar_direccion (string) {
-
-}
-
-
-module.exports.validar_telefono = validar_telefono;
-module.exports.validar_direccion = validar_direccion;
-
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
-
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const terminos = document.getElementById('terminos');
-    if (campos.nombre && campos.usuario && campos.password && campos.telefono && campos.direccion && campos.correo && terminos.checked) {
-        formulario.reset();
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout( () => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 5000);
-
-        document.querySelectorAll ('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        });
+    if(expresiones.telefono.test(e.target.value) !== numTelefono ) {
+        console.log('error');
+        //document.getElementById('grupo__telefono').classList.remove('formulario__grupo-incorrecto');
+        //document.getElementById('grupo__telefono').classList.add('formulario__grupo-correcto');
+        //document.querySelector('#grupo__telefono i').classList.remove('fa-check-circle');
+        //document.querySelector('#grupo__telefono i').classList.add('fa-times-circle');
     } else {
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-        setTimeout( () => {
-            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        }, 5000);
+        console.log('OK');
+        //document.getElementById('grupo__telefono').classList.add('formulario__grupo-incorrecto');
     }
-});
+}
+
+
+//function validar_direccion (string) {
+//
+//}
+
+//module.exports.validar_telefono = validar_telefono;
+//module.exports.validar_direccion = validar_direccion;
+
+// inputs.forEach((input) => {
+//     input.addEventListener('keyup', validarFormulario);
+//     input.addEventListener('blur', validarFormulario);
+// });
+
+// formulario.addEventListener('submit', (e) => {
+//     //Se usa para evitar cambio en la url al dar al boton
+//     e.preventDefault();
+// });
+
+// formulario.addEventListener('submit', (e) => {
+//     e.preventDefault();
+
+//     const terminos = document.getElementById('terminos');
+//     if (campos.nombre && campos.usuario && campos.password && campos.telefono && campos.direccion && campos.correo && terminos.checked) {
+//         formulario.reset();
+//         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+//         setTimeout( () => {
+//             document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+//         }, 5000);
+
+//         document.querySelectorAll ('.formulario__grupo-correcto').forEach((icono) => {
+//             icono.classList.remove('formulario__grupo-correcto');
+//         });
+//     } else {
+//         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+//         setTimeout( () => {
+//             document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+//         }, 5000);
+//     }
+// });
